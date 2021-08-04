@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-from scipy.interpolate import make_interp_spline
+from scipy.interpolate import make_interp_spline#我想知道是否真的更新了？？？
 
 
 
@@ -116,7 +116,7 @@ class XY_triangular():
             dic_thermal_t['corre_distance_{:}'.format(ki)]=[]
         for k in range(max1_nsweeps):
             self.sweep()     
-            if (k>8000)  or k == max1_nsweeps-1:
+            if (k>500)  or k == max1_nsweeps-1:
                 break
 
         
@@ -142,14 +142,14 @@ dic = {}
 temp_num=4
 dic['temp']=list(np.linspace(0.02,3.0,temp_num))
 #dic['Cv']=[]
-a=XY_triangular(width=20)#维度需大于10
+a=XY_triangular(width=12)#维度需大于10
 #initial_system.show()
 ei=el=1
 x=np.arange(1,a.r_dis+1,1)
 x_smooth = np.linspace(x.min(), x.max(), 30)
 for i in range(1,temp_num+1):
     dic['corre_{:}'.format(i)]=np.zeros(a.r_dis)
-plt.figure(figsize=(6,4), dpi=400)
+plt.figure(figsize=(6,4), dpi=100)
 for T in dic['temp']:
     a.equilibrate(temperature=T)
     print('down!!!')
