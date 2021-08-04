@@ -3,7 +3,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-from scipy.interpolate import make_interp_spline#我想知道是否真的更新了？？？
+from scipy.interpolate import make_interp_spline
+'''我想知道是否真的更新了？？？从版本备注来看，确实更新了。方法是：右键点击，选择git bash here进入ssh命令，先用git init初始化一下再git add . ，
+再git commit -m “这里写推送版本，即版本注释”，然后git push origin master
+'''
 
 
 
